@@ -1,4 +1,4 @@
-# :scissors: AWS CDK HELLO WORLD :scissors:
+# :trumpet: AWS CDK HELLO WORLD :trumpet:
 
 <img src="assets/HelloWorldLambdaArchitecture.png" width=90%> <br>
 
