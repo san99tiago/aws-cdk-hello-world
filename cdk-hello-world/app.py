@@ -7,22 +7,11 @@ from cdk_hello_world.cdk_hello_world_stack import CdkHelloWorldStack
 
 
 app = cdk.App()
-CdkHelloWorldStack(app, "CdkHelloWorldStack",
-    # If you don't specify 'env', this stack will be environment-agnostic.
-    # Account/Region-dependent features and context lookups will not work,
-    # but a single synthesized template can be deployed anywhere.
+hello_world_stack = CdkHelloWorldStack(app, "CdkHelloWorldStack")
 
-    # Uncomment the next line to specialize this stack for the AWS Account
-    # and Region that are implied by the current CLI configuration.
-
-    #env=cdk.Environment(account=os.getenv('CDK_DEFAULT_ACCOUNT'), region=os.getenv('CDK_DEFAULT_REGION')),
-
-    # Uncomment the next line if you know exactly what Account and Region you
-    # want to deploy the stack to. */
-
-    #env=cdk.Environment(account='123456789012', region='us-east-1'),
-
-    # For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html
-    )
+cdk.Tags.of(hello_world_stack).add("Environment", "Development")
+cdk.Tags.of(hello_world_stack).add("RepositoryUrl", "https://github.com/san99tiago/aws-cdk-hello-world")
+cdk.Tags.of(hello_world_stack).add("Source", "aws-cdk-hello-world")
+cdk.Tags.of(hello_world_stack).add("Owner", "Santiago Garcia Arango")
 
 app.synth()
