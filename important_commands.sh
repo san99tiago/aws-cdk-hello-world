@@ -50,8 +50,10 @@ pip install -r requirements.txt || pip3 install -r requirements.txt
 
 
 ################################################################################
-# PART 3: Main CDK commands (most used)
+# PART 3: Main CDK and Python commands (most used)
 ################################################################################
+
+python -m pytest
 
 cdk bootstrap
 cdk synthesize
