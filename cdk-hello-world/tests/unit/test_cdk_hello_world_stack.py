@@ -3,13 +3,37 @@ import aws_cdk.assertions as assertions
 
 from cdk_hello_world.cdk_hello_world_stack import CdkHelloWorldStack
 
-# example tests. To run these tests, uncomment this file along with the example
-# resource in cdk_hello_world/cdk_hello_world_stack.py
-def test_sqs_queue_created():
-    app = core.App()
-    stack = CdkHelloWorldStack(app, "cdk-hello-world")
-    template = assertions.Template.from_stack(stack)
 
-#     template.has_resource_properties("AWS::SQS::Queue", {
-#         "VisibilityTimeout": 300
-#     })
+app = core.App()
+stack = CdkHelloWorldStack(app, "cdk-hello-world")
+template = assertions.Template.from_stack(stack)
+
+
+def test_iam_role_for_lambda_created():
+    template.has_resource_properties(
+        "AWS::IAM::Role",
+        {
+            "AssumeRolePolicyDocument": {
+            "Statement": [
+                {
+                "Action": "sts:AssumeRole",
+                "Effect": "Allow",
+                "Principal": {
+                    "Service": "lambda.amazonaws.com"
+                }
+                }
+            ],
+            }
+        }
+    )
+
+
+def test_lambda_function_created():
+    template.has_resource_properties(
+        "AWS::Lambda::Function",
+        {
+            "Handler": "lambda_function.lambda_handler",
+            "Runtime": "python3.9",
+            "FunctionName": "HelloWorldLambdaFunction",
+        }
+    )
