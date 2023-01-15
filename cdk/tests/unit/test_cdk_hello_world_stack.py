@@ -1,7 +1,7 @@
 import aws_cdk as core
 import aws_cdk.assertions as assertions
 
-from cdk_hello_world.cdk_hello_world_stack import CdkHelloWorldStack
+from stacks.cdk_hello_world_stack import CdkHelloWorldStack
 
 
 app = core.App()
