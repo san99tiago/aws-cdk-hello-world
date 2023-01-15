@@ -34,12 +34,15 @@ pip install aws-cdk-lib
 aws configure
 
 # Bootstrap CDK (provision initial resources to work with CDK.. S3, roles, etc)
-#! Change "ACCOUNT-NUMBER-1" and "REGION-1" to your needed values 
-cdk bootstrap aws://ACCOUNT-NUMBER-1/REGION-1
+#! Change "ACCOUNT-NUMBER" and "REGION" to your needed values 
+cdk bootstrap aws://ACCOUNT-NUMBER/REGION
 
 # Create the CDK project's folder
-mkdir cdk-hello-world
-cd cdk-hello-world || echo "Make sure that the folder exists"
+mkdir cdk
+cd cdk || echo "Make sure that the folder exists"
+
+# Create Python virtual environment
+python3 -m venv .venv
 
 # Initialize project
 cdk init --language python
