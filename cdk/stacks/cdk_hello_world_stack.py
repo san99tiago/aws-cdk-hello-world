@@ -29,5 +29,5 @@ class CdkHelloWorldStack(Stack):
             runtime=aws_lambda.Runtime.PYTHON_3_9,
             timeout=Duration.seconds(5),
             memory_size=128,
-            environment={"LOG_LEVEL": "INFO"},
+            environment={"LOG_LEVEL": "DEBUG"},  # "INFO" or "DEBUG" (based on log_level requirements)
         )
