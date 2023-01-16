@@ -8,7 +8,6 @@ from aws_cdk import (
 from constructs import Construct
 
 class CdkHelloWorldStack(Stack):
-
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
@@ -23,11 +22,12 @@ class CdkHelloWorldStack(Stack):
         self.simple_lambda = aws_lambda.Function(
             self,
             id="{}Lambda".format(construct_id),
-            function_name="HelloWorldLambdaFunction",
-            description="Simple Hello-World function deployed with AWS CDK",
+            function_name="hello-world-lambda-function",
+            description="Simple hello world function deployed with AWS CDK",
             code=aws_lambda.Code.from_asset(PATH_TO_FUNCTION_FOLDER),
             handler="lambda_function.lambda_handler",
             runtime=aws_lambda.Runtime.PYTHON_3_9,
-            timeout=Duration.seconds(10),
+            timeout=Duration.seconds(5),
             memory_size=128,
+            environment={"LOG_LEVEL": "INFO"},
         )
