@@ -34,6 +34,6 @@ def test_lambda_function_created():
         {
             "Handler": "lambda_function.lambda_handler",
             "Runtime": "python3.9",
-            "FunctionName": "HelloWorldLambdaFunction",
+            "FunctionName": "hello-world-lambda-function",
         }
     )

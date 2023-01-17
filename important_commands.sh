@@ -56,8 +56,13 @@ pip install -r requirements.txt || pip3 install -r requirements.txt
 # PART 3: Main CDK and Python commands (most used)
 ################################################################################
 
+cdk bootstrap
+source .venv/bin/activate || echo "Make sure that virtual env exists"
+
+# Test Lambda Python Stack
 python -m pytest
 
+# CDK commands
 cdk bootstrap
 cdk synthesize
 cdk diff

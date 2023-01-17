@@ -6,9 +6,6 @@ This is a simple custom `Hello-world` project deployed on AWS with the following
 
 - Infrastructure as Code with [AWS CDK](https://aws.amazon.com/cdk/)
 - Source Code with [AWS Lambda Functions](https://aws.amazon.com/lambda/) built with [Python Runtime](https://www.python.org)
-- Unit Tests: TODO
-- Integration Tests: TODO
-- Deployment Strategies: TODO
 
 This project was inspired by the following tutorials and examples:
 
