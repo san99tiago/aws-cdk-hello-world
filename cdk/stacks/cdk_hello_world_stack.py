@@ -33,3 +33,7 @@ class CdkHelloWorldStack(Stack):
             memory_size=128,
             environment={"LOG_LEVEL": "DEBUG"},  # "INFO" or "DEBUG" (based on log_level requirements)
         )
+
+        self.simple_lambda.add_function_url(
+            auth_type=aws_lambda.FunctionUrlAuthType.NONE,
+        )
