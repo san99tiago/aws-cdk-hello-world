@@ -13,9 +13,11 @@ class CdkHelloWorldStack(Stack):
 
         # Get relative path for folder that contains Lambda function sources
         # ! Note--> we must obtain parent dirs to create path (that's why there is "os.path.dirname()")
+        top_level_path = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
         PATH_TO_FUNCTION_FOLDER = os.path.join(
-            os.path.dirname(__file__),
-            "lambda"
+            top_level_path,
+            "lambda",
+            "src",
         )
         print("Source code for lambda function obtained from: ", PATH_TO_FUNCTION_FOLDER)
 

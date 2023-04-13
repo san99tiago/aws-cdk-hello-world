@@ -14,15 +14,15 @@ def test_iam_role_for_lambda_created():
         "AWS::IAM::Role",
         {
             "AssumeRolePolicyDocument": {
-            "Statement": [
-                {
-                "Action": "sts:AssumeRole",
-                "Effect": "Allow",
-                "Principal": {
-                    "Service": "lambda.amazonaws.com"
-                }
-                }
-            ],
+                "Statement": [
+                    {
+                        "Action": "sts:AssumeRole",
+                        "Effect": "Allow",
+                        "Principal": {
+                            "Service": "lambda.amazonaws.com"
+                        }
+                    }
+                ],
             }
         }
     )
