@@ -8,15 +8,15 @@
 # -->  https://nodejs.org/en/download/
 # -->  https://www.python.org/downloads/
 
-# Verify that NodeJs/npm is installed correctly
+# Verify that NodeJs/npm are installed correctly
 node --version
 npm --version
 
-# Verify that Python/pip is installed correctly
-python --version || python3 --version
-pip --version || pip3 --version
+# Verify that Python/pip are installed correctly
+python --version
+pip --version
 
-# Install AWS-CDK (on NodeJs)
+# Install AWS-CDK (on NodeJs) [This is the CLI tool to run "cdk" commands]
 sudo npm install -g aws-cdk
 
 # Verify correct install of AWS-CDK
@@ -29,9 +29,11 @@ npm list --global | grep aws-cdk
 
 # Configure AWS credentials (follow steps)
 aws configure
+# --> Alternative 1: Environment variables added to terminal session
+# --> Alternative 2: AWS Cloud9 with the right permissions
 
 # Bootstrap CDK (provision initial resources to work with CDK.. S3, roles, etc)
-#! Change "ACCOUNT-NUMBER" and "REGION" to your needed values 
+#! Change "ACCOUNT-NUMBER" and "REGION" to your needed values
 cdk bootstrap aws://ACCOUNT-NUMBER/REGION
 
 # Create the CDK project's folder
@@ -39,24 +41,25 @@ mkdir cdk
 cd cdk || echo "Make sure that the folder exists"
 
 # Create Python virtual environment
-python3 -m venv .venv
+python -m venv .venv
 
 # Initialize project
 cdk init --language python
 
 # Access the virtual environment and install its dependencies
 source .venv/bin/activate || echo "Make sure that virtual env exists"
-pip install -r requirements.txt || pip3 install -r requirements.txt
+pip install -r requirements.txt
 
 
 ################################################################################
 # PART 3: Main CDK and Python commands (most used)
 ################################################################################
 
-cdk bootstrap
+# Activate Python virtual environment and check dependencies installed
 source .venv/bin/activate || echo "Make sure that virtual env exists"
+pip install -r requirements.txt
 
-# Test Lambda Python Stack
+# Test Lambda Python Stack (optional)
 python -m pytest
 
 # CDK commands
