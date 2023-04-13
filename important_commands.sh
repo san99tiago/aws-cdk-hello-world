@@ -22,9 +22,6 @@ sudo npm install -g aws-cdk
 # Verify correct install of AWS-CDK
 npm list --global | grep aws-cdk
 
-# Install AWS construct library on Python
-pip install aws-cdk-lib
-
 
 ################################################################################
 # PART 2: Initial Project Setup (Only run these at the beginning)
