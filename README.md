@@ -2,6 +2,14 @@
 
 <img src="assets/HelloWorldLambdaArchitecture.png" width=90%> <br>
 
+## YouTube Tutorial 🔴
+
+I created a dedicated video on my YouTube channel to explain it step-by-step (Spanish):
+
+- [Tutorial AWS CDK Nivel 1: Despliegue de AWS LAMBDA con Infrastructura como Código (IaC)](https://youtu.be/q9qkCpXLlGE)
+
+## Overview 🔮
+
 This is a simple custom `Hello-world` project deployed on AWS with the following specifications:
 
 - Infrastructure as Code with [AWS CDK-Python](https://aws.amazon.com/cdk/)
